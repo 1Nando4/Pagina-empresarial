@@ -10,6 +10,7 @@ $parrafos:'Montsserrat', sans-serif;
 html{
     box-sizing: border-box;
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -33,7 +34,7 @@ p, a{
     display: none;
 }
 
-.contenido-encabezado, contenedor{
+.contenido-encabezado, .contenedor{
     margin: 0 auto;
     max-width: 120rem;
     width: 95%;
@@ -47,6 +48,28 @@ p, a{
     border: none;
     color: $blanco;
 }
+
+.bordes{
+    border: 2px solid $azulClaro;
+    color: $azulClaro;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: background-color .3s ease-in-out;
+    
+}
+
+@media(min-width:768px) {
+    .bordes{
+        display: inline-block;
+        margin-top: 2rem;
+    }
+}
+
+.bordes:hover{
+    background-color: $azulClaro;
+    color: $blanco;
+} 
 
 .btn:hover{
     cursor: pointer;
@@ -82,6 +105,13 @@ p, a{
     z-index: 1;
 
 }
+
+@media(min-width:768px) {
+    .encabezado{
+        background-attachment: fixed;
+    }
+
+}
 .encabezado::before{
     content:'';
     position: absolute;
@@ -110,6 +140,10 @@ p, a{
     justify-content: space-around;
     background-color: $blanco;
     box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.45);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 }
 
 .navegacion{
@@ -244,4 +278,285 @@ p, a{
     font-family: $parrafos;
     outline: none;
 }
+
+/*Ventajas*/
+
+@media(min-width: 768px) {
+    .contenido-ventajas{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1rem;
+    }
+}
+
+.ventajas{
+    background-color: $azulOscuro;
+    padding: 5rem;
+
+}
+
+.ventaja{
+    color: $blanco;
+    text-align: center;
+
+}
+
+.ventaja i{
+    font-size: 4rem;
+}
+
+.ventaja h3{
+    font-size: 2.5rem;
+}
+
+.ventaja p{
+    font-size: 2rem;
+}
+
+/*Sección sobre nosotros*/
+
+.nosotros h2{
+    text-align: center;
+    font-size: 4rem;
+    color: $azulClaro;
+}
+
+@media(min-width: 768px) {
+    .nosotros h2{
+        font-size: 5rem;
+    }
+}
+
+.contenido-nosotros{
+    background-image: url('/img/chicaprogramando.jpg');
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    background-size: cover;
+    background-position: center center;
+
+}
+
+@media(min-width: 768px) {
+    .contenido-nosotros{
+        grid-template-columns: repeat(2,1fr);
+        background-attachment: fixed;
+    }
+}
+
+.texto-nosotros{
+    padding: 2rem;
+    grid-row: 2/3;
+    background-color: $blanco;
+}
+
+@media(min-width:768px) {
+    .texto-nosotros{
+        padding: 5rem;
+
+    }
+}
+
+.texto-nosotros h3{
+    font-size: 4rem;
+    color: $azulClaro;
+    text-align: center;
+}
+
+.texto-nosotros p{
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+@media(min-width: 768px) {
+    .texto-nosotros p{
+        text-align: left;
+    }
+}
+
+/*Sección servicios*/
+
+.servicios{
+    padding-top: 5rem;
+
+}
+
+.servicios h2{
+    font-size: 5rem;
+    text-align: center;
+    color: $azulClaro;
+}
+
+@media(min-width: 768px) {
+    .contenido-servicios{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 4rem;
+    }
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.servicio i{
+    background-color: $azulClaro;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $blanco;
+    font-size: 3rem;
+    box-shadow: 10px 10px 16px -6px rgba(0,0,0,0.45);
+    transition: all .3s ease-in-out;
+}
+
+.servicio h3{
+    font-size: 2.2rem;
+    color: $azulOscuro;
+}
+
+.servicio p{
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+@media(min-width:768px) {
+    .servicio p{
+        text-align: left;
+    }
+}
+
+@media(min-width:768px) {
+    .servicio:hover{
+        cursor: pointer;
+    }
+
+    .servicio:hover .fas{
+        background-color: $blanco;
+        color: $azulClaro;
+    }
+}
+
+
+/*Seccion contacto*/
+
+.contacto{
+    padding-top: 5rem;
+}
+
+.contacto h2{
+    text-align: center;
+    color: $azulClaro;
+    font-size: 5rem;
+}
+
+@media(min-width:768px) {
+    .contenido-contacto{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+.informacion-contacto{
+    background-image: url(/img/macbook.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(min-width:768px) {
+    .informacion-contacto{
+        height: 100vh ;
+    }
+}
+
+.informacion-contacto::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+
+.informacion-contacto h3{
+    font-size: 4rem;
+    text-align: center;
+}
+
+.informacion-contacto p{
+    font-size: 2rem;
+}
+
+.informacion-contacto h3, .informacion-contacto p{
+    color: $blanco;
+}
+
+.formulario-contacto{
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $azulOscuro;
+}
+
+.input-contacto label{
+    color: $blanco;
+    font-family: $parrafos;
+    display: block;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+.input-contacto input{
+    padding: 1.2rem 1rem;
+    font-family: $parrafos;
+}
+
+.input-contacto input, .input-encabezado textarea{
+    width: 100%;
+    outline: none;
+}
+
+.inout-contacto textarea{
+    resize: none;
+}
+
+.input-contacto input[type="submit"]{
+    width: auto;
+    padding: 1rem 3rem;
+    transition: background-color .3s ease-in-out;
+}
+
+.input-contacto input[type="submit"]:hover{
+    background-color: $blanco;
+    color: $azulClaro;
+}
+
+.footer .logo h2, .footer p{
+    text-align: center;
+}
+
+
+@media(min-width: 768px) {
+    .footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+ 
 
